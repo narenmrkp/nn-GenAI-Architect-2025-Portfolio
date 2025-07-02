@@ -1,24 +1,27 @@
 ✅ Project 2: ReAct Prompt Agent (Tool Use + Reasoning)
 -------------------------------------------------------------
-# ✅ ReAct Prompt Agent with Calculator using LangChain + Groq + Gradio
+# ✅ ReAct Prompt Agent (Groq only - No external Python Tool needed)
 !pip install -q langchain langchain-groq gradio
 
 import os, gradio as gr
 from langchain.agents import Tool, initialize_agent, AgentType
-from langchain.tools import DuckDuckGoSearchRun
-from langchain.agents.agent_toolkits import load_tools
-from langchain.utilities import SerpAPIWrapper
 from langchain_groq import ChatGroq
-from langchain.tools.python.tool import PythonREPLTool
 
 # 🔑 Set your Groq API Key
-os.environ["GROQ_API_KEY"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+os.environ["GROQ_API_KEY"] = "gsk_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 llm = ChatGroq(temperature=0, model_name="llama3-8b-8192")
 
+# ✅ Calculator Tool (Safe eval)
+def calculator_tool(input_text):
+    try:
+        result = eval(input_text)
+        return str(result)
+    except Exception as e:
+        return f"Error: {str(e)}"
+
 tools = [
-    Tool(name="Calculator", func=eval, description="Useful for math"),
-    PythonREPLTool(),  # For simple calculations
+    Tool(name="Calculator", func=calculator_tool, description="Performs basic math like 24*19+13")
 ]
 
 agent = initialize_agent(
@@ -39,6 +42,6 @@ gr.Interface(
     fn=run_agent,
     inputs=gr.Textbox(label="Ask Anything", placeholder="E.g. What is (24*19)+13?"),
     outputs=gr.Textbox(label="Agent Response"),
-    title="🧠 ReAct Prompt Agent with Groq",
-    description="Tool-using LLM with ReAct prompting and reasoning steps"
+    title="🧠 ReAct Prompt Agent (Groq)",
+    description="ReAct-based Agent using Groq LLaMA that performs reasoning and tool calling"
 ).launch()
