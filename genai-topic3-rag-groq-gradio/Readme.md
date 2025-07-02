@@ -20,7 +20,8 @@ LLM	Uses retrieved context to generate final response
 Chain	Combines steps (retrieval → answer generation)
 
 🛠️ Projects Overview (All with Groq + Gradio)
-##################################################################################################################################
+#########################################################################################################
+
 ✅ Project 1: RAG from Wikipedia using LangChain
 🎯 Goal: Answer any query using real-time Wikipedia-based search (no hallucination).
 
@@ -36,7 +37,8 @@ Dynamic context injection
 ----------------------------------------------------------------------------------------------------------
 🧠 Resume Line:
 Built a real-time Wikipedia-powered RAG pipeline with Groq’s LLaMA3 and Gradio UI, ensuring accurate, live knowledge queries.
-###########################################################################################################################
+############################################################################################################
+
 ✅ Project 2: RAG from Uploaded PDF using Chroma Vector DB
 🎯 Goal: Ask questions from your custom documents.
 
@@ -53,7 +55,8 @@ File-based retrieval + QA chain
 
 🧠 Resume Line:
 Created a local document RAG engine using Chroma vectorstore and Groq API to answer queries from uploaded PDFs.
-##################################################################################################################################
+#####################################################################################################
+
 ✅ Project 3: Hybrid RAG – Combine PDF + Wikipedia
 🎯 Goal: Use multi-retriever setup to pull context from both:
 
@@ -72,7 +75,7 @@ Chain routing
 
 🧠 Resume Line:
 Developed a hybrid RAG system that blends real-time Wikipedia and user-uploaded documents into a single answer pipeline using Groq LLaMA3 and LangChain.
-##################################################################################################################################
+##################################################################################################
 ✅ Mastered Concepts from Topic-3
 Concept	Covered? ✅
 WikipediaRetriever	✅ Project 1
@@ -81,4 +84,4 @@ LangChain QA Chains	✅ All
 Groq LLM in RAG	✅ All
 Multi-Retriever Routing	✅ Project 3
 Contextual Answer Generation	✅ All
-############################################################################# End of Topic-3 (Projects Completed Successfully) #####################################################
+################################################### End of Topic-3 (Projects Completed Successfully) #####################
