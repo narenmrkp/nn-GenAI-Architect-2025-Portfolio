@@ -9,7 +9,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 # 🔑 Insert your Groq API key here
-os.environ["GROQ_API_KEY"] = "your-groq-api-key"
+os.environ["GROQ_API_KEY"] = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 
 llm = ChatGroq(temperature=0.7, model_name="llama3-8b-8192")
 
