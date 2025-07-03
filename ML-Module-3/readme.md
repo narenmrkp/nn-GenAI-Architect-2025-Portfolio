@@ -1,5 +1,5 @@
-📈 Module-3: Supervised Learning – Regression Models
-📁 GitHub Folder: ML-Module-3-Regression/
+📈 Module-3: Regression Models – House Price Prediction (California Housing)
+📁 GitHub Folder: ML-Module-3/
 
 📘 1. Overview of Regression
 Regression is a Supervised ML technique used to predict continuous numerical values.
@@ -10,45 +10,46 @@ Model	Use Case	Notes
 🔹 Polynomial Regression	Curve-like patterns	Overfitting risk
 🔹 Ridge / Lasso	Avoid overfitting	Adds regularization
 
-🎯 Mini Project: House Price Prediction
-Dataset: Boston Housing (from sklearn.datasets)
-Target: Predict MEDV (Median House Value)
+📘 1. About the Dataset
+The California Housing dataset (from sklearn.datasets) contains ~20,000 rows with features like:
+MedInc, HouseAge, AveRooms, AveBedrms, Population, Latitude, Longitude
+Target: Median House Value (MedHouseVal)
+Ideal for regression tasks
 
-# 📈 Module-3: Regression Models – House Price Prediction
+# 📈 Module-3: Regression Models – California Housing Prediction
 
-This module introduces common **regression algorithms** using the **Boston Housing dataset**.
+Explore regression techniques using the **California Housing** dataset (~20K rows).
 
-## 🧠 Models Covered
-- ✅ Linear Regression
-- ✅ Polynomial Regression
-- ✅ Ridge & Lasso Regression
+## Models
+- **Linear Regression**
+- **Polynomial Regression (degree=2)**
+- **Ridge Regression**
+- **Lasso Regression**
 
-## 📘 Dataset: Boston Housing
-- 506 entries, 13 features (e.g., crime rate, distance to employment centers)
-- Target: `MEDV` – Median House Price
+## Dataset Features
+Includes features like `MedInc`, `HouseAge`, `AveRooms`, and more.
 
-## ⚙️ Tools Used
-- `sklearn.datasets`, `LinearRegression`, `PolynomialFeatures`, `Ridge`, `Lasso`
-- `r2_score`, `mean_squared_error` for evaluation
+## Evaluation Metrics
+- **R² Score** (higher is better)
+- **Mean Squared Error** (lower is better)
 
-## 📊 Output Summary
-| Model | R² Score |
-|-------|----------|
-| Linear | 0.73 |
-| Polynomial | 0.79 |
-| Ridge | 0.74 |
-| Lasso | 0.72 |
+## 📊 Results Summary
+| Model | R² Score | MSE |
+|-------|----------|-----|
+| Linear | 0.60 | 0.48 |
+| Polynomial | 0.64 | 0.43 |
+| Ridge | 0.61 | 0.47 |
+| Lasso | 0.59 | 0.49 |
 
 ## 📸 Screenshots
-![Data Preview](screenshots/data-head.png)  
-![True vs Predicted](screenshots/true-vs-pred.png)
-
+Uploaded
 ---
 
-## 🧠 Insights
-- Polynomial model performs better on non-linear patterns
-- Ridge prevents overfitting via regularization
-- Lasso can reduce feature set by shrinking coefficients to zero
+## Insights
+- Polynomial model captures non-linear trends best.
+- Ridge and Lasso add stability via regularization.
+- Lasso may reduce feature weights to zero.
 
-## 🚀 Next Module:
-➡ [Module-4: Classification Models – KNN, SVM, RandomForest](../ML-Module-4-Classification/)
+## ➡ Next:
+Module-4: Supervised Learning – **Classification Models** (KNN, SVM, Random Forest)
+
