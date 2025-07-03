@@ -84,7 +84,6 @@ plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
 # 💾 Save Trained Models
 with open("linear_regression_model.pkl", "wb") as f:
     pickle.dump(lr_model, f)
