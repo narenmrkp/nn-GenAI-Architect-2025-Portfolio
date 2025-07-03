@@ -77,3 +77,11 @@ plt.ylabel("Predicted")
 plt.legend()
 plt.title("🏠 Actual vs Predicted House Values")
 plt.show()
+
+# Save top model: Polynomial Regression (as example)
+with open("polynomial_regression.pkl", "wb") as f:
+    pickle.dump(poly, f)
+
+# Save Ridge too if needed
+with open("ridge_model.pkl", "wb") as f:
+    pickle.dump(ridge, f)
