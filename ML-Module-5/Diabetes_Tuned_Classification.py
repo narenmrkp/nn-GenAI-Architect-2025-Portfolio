@@ -139,4 +139,36 @@ with open("stack_model.pkl", "wb") as f:
 
 with open("scaler.pkl", "wb") as f:
     pickle.dump(scaler, f)
+--------------------------------------------------------------------------------------------------------------------------------
+# ✅ 📊 Code: Performance Summary Table (Final Comparison)
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, roc_curve
 
+# 🧠 Models to Evaluate
+models = {
+    "SVM (Tuned)": svm_best,
+    "Random Forest (Tuned)": rf_best,
+    "VotingClassifier": voting_model,
+    "StackingClassifier": stack_model
+}
+
+# 📊 Store Metrics
+summary = []
+
+for name, model in models.items():
+    y_pred = model.predict(X_test)
+    y_prob = model.predict_proba(X_test)[:, 1]
+
+    summary.append({
+        "Model": name,
+        "Accuracy": accuracy_score(y_test, y_pred),
+        "Precision": precision_score(y_test, y_pred),
+        "Recall": recall_score(y_test, y_pred),
+        "F1-Score": f1_score(y_test, y_pred),
+        "ROC-AUC": roc_auc_score(y_test, y_prob)
+    })
+
+# 📋 Convert to DataFrame
+summary_df = pd.DataFrame(summary).sort_values(by="Accuracy", ascending=False).reset_index(drop=True)
+
+# 🎨 Show with styling
+summary_df.style.background_gradient(cmap="Blues").format(precision=3)
